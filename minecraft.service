@@ -1,0 +1,17 @@
+[Unit]
+Description=Minecraft Server (tmux)
+After=network.target
+
+[Service]
+Type=forking
+User=user
+Group=user
+WorkingDirectory=/home/user/dir/
+ExecStart=/usr/bin/tmux new-session -d -s minecraft '/home/user/dir/run.sh'
+ExecStop=/usr/bin/tmux send-keys -t minecraft 'stop' C-m
+ExecStopPost=/usr/bin/tmux kill-session -t minecraft
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
