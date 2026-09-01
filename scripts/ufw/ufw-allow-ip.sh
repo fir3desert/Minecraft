@@ -28,7 +28,7 @@ fi
 
 IP="$1"
 shift
-COMMENT="$*"   # allows comments with spaces, e.g.: "Nathan PC"
+COMMENT="$*"   # allows comments with spaces, e.g.: "fir3 PC"
 
 PORTS=(25565 24454)
 
