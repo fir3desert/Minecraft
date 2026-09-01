@@ -1,8 +1,10 @@
 #!/bin/bash
 #
-# script.sh - Adds an IP to the firewall (ufw) allowing access
-#             to ports 25565 and 24454, leaving a comment
-#             with the specified name and date/time of addition.
+# script.sh - Adds an IP to the firewall (ufw) when the server is configured
+#             with all WAN traffic denied by default and only explicitly
+#             allowed IPs are permitted. This script opens ports 25565 and
+#             24454 for the specified IP and adds a comment with the name
+#             and date/time of the allow action.
 #
 # Usage:
 #   sudo ./script.sh <IP> <COMMENT>
@@ -13,6 +15,10 @@
 
 set -euo pipefail
 
+# This script is intended for a hardened firewall setup:
+# - All outside / WAN traffic is denied by default.
+# - Only the IPs explicitly allowed by this script are permitted.
+#
 # --- Basic checks ---
 
 if [ "$EUID" -ne 0 ]; then
@@ -59,6 +65,7 @@ COMMENT="${COMMENT} - ${TIMESTAMP}"
 # you'll see a warning when listing rules with 'ufw status verbose'.
 
 echo "Adding ufw rules for $IP"
+echo "Mode: all WAN traffic denied by default; only this IP is explicitly allowed."
 echo "Comment: \"$COMMENT\""
 echo ""
 
