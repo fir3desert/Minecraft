@@ -1,14 +1,49 @@
-## License
+# Minecraft
 
-This project is free to use, modify, and redistribute.
+Minecraft server-side resources, tools and configurations by **fir3**.
 
-You may use this project for personal or commercial purposes and create your own modified versions.
+This repository contains the resources I use and maintain for my Minecraft server environment, including mods, scripts, services and texture packs.
 
-**Attribution is required.**
+## 📁 Contents
 
-Original Creator: **fir3**
-Original Repository: **https://github.com/fir3desert/Minecraft**
+### `mods`
 
-Modified and redistributed versions must preserve the original project name and must continue to credit **fir3** as the original creator.
+Minecraft mods used by the server and its environment.
 
-See the [LICENSE](LICENSE) file for the complete license terms.
+### `scripts`
+
+Scripts and utilities for managing, maintaining and automating different tasks related to the Minecraft server.
+
+### `services`
+
+Services and supporting components used alongside the Minecraft server.
+
+### `texturepacks`
+
+Custom texture packs and visual resources used by the Minecraft environment.
+
+## 🎮 Minecraft
+
+This repository is focused on **server-side Minecraft resources** and the tools surrounding the server environment.
+
+The contents may change over time as new resources are added, updated or replaced.
+
+## 👤 Creator
+
+Created and maintained by **fir3**.
+
+Original repository:
+
+**https://github.com/fir3desert/Minecraft**
+
+If you use, modify or redistribute this project, please keep the original project name, credit **fir3** as the original creator, and include a reference to the original repository.
+
+## 📜 License
+
+This project is free to use, modify and redistribute under the terms described in the [`LICENSE`](LICENSE) file.
+
+Please note that third-party software, mods, libraries, textures and other externally created resources may have their own licenses and distribution requirements.
+
+---
+
+**Minecraft · Created by fir3**
