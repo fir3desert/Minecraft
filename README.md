@@ -40,7 +40,7 @@ If you use, modify or redistribute this project, please keep the original projec
 
 ## 📜 License
 
-This project is free to use, modify and redistribute under the terms described in the [`LICENSE`](LICENSE) file.
+This project is free to use, modify and redistribute under the terms described in the [`LICENSE`](LICENSE.md) file.
 
 Please note that third-party software, mods, libraries, textures and other externally created resources may have their own licenses and distribution requirements.
 
