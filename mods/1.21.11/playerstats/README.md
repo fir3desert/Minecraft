@@ -1,39 +1,107 @@
 # PlayerStats
 
-PlayerStats is a Minecraft mod that adds a simple command-based stats system for players.
+Server-side Fabric mod for Minecraft 1.21.11 that tracks and displays per-player statistics.
+
+## What it tracks
+
+The mod records:
+
+- Blocks mined
+- Mobs killed
+- Items crafted
+- Items traded
+- Deaths
+- Playtime
+- Distances traveled:
+  - Walking
+  - Sprinting
+  - Swimming
+  - With elytra
+
+Player data is stored in JSON files inside the server configuration directory.
+
+On first launch, the mod automatically creates:
+
+- `config/playerstats/config.json`
+- `config/playerstats/data/`
 
 ## Commands
 
-| Command | What it does |
-| --- | --- |
-| `/stats` | Shows your own statistics |
-| `/stats <player>` | Shows the statistics of another online player |
-| `/stats top <category>` | Shows the top 10 players in a category with gold, silver, and bronze medals |
+### `/stats`
 
-## What `/stats` shows
+Shows your own statistics.
 
-The command output includes the following information:
+Example:
 
-- blocks
-- mobs
-- crafted items
-- trades
-- traded items
-- deaths
-- play time
-- distances
+```text
+/stats
+```
 
-This is the main stats display for each player.
+### `/stats <player>`
 
-## Overview
+Shows the statistics of a specific connected player.
 
-The mod is designed to be straightforward and easy to use:
+Example:
 
-- one command for personal stats
-- support for checking other online players
-- ranked top lists by category
-- readable output focused on player progression
+```text
+/stats fir3
+```
 
-## Summary
+### `/stats top <category>`
 
-PlayerStats gives players a quick way to check their own progression and compare it with others through simple commands and a clear stats interface.
+Shows the top 10 players for a specific category.
+
+Available categories:
+
+- `blocks_mined`
+- `mobs_killed`
+- `items_crafted`
+- `items_traded`
+- `deaths`
+- `playtime`
+
+Examples:
+
+```text
+/stats top blocks_mined
+/stats top mobs_killed
+/stats top playtime
+```
+
+## Configuration options
+
+The configuration file is generated at:
+
+```text
+config/playerstats/config.json
+```
+
+Default values:
+
+```json
+{
+  "saveIntervalTicks": 6000,
+  "topPlayersCount": 10,
+  "enableAchievements": true
+}
+```
+
+### Option explanations
+
+- `saveIntervalTicks`: automatic save interval in ticks. 6000 ticks equals 5 minutes.
+- `topPlayersCount`: maximum number of players displayed in the ranking.
+- `enableAchievements`: flag for enabling achievement-related features (currently defined in config, while the main system is already built around command and data tracking).
+
+## Saved data
+
+Each player has an individual file here:
+
+```text
+config/playerstats/data/<uuid>.json
+```
+
+This allows statistics to persist across server restarts.
+
+## Notes
+
+This mod is intended as a server statistics system and syncs native Minecraft stats with its own internal storage.
